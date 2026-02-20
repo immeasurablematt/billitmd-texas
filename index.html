@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>BillitMD — AI Billing Code Optimization for Texas Physicians</title>
+  <meta name="description" content="BillitMD uses AI to optimize CPT and HCPCS billing codes for Texas physicians. Stop leaving 15–20% revenue on the table. Built for independent practices. Join the waitlist." />
+  <meta name="keywords" content="medical billing optimization Texas, CPT code optimizer, physician billing software Texas, HCPCS billing AI, independent physician billing, Texas medical practice billing" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://texas.billitmd.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BillitMD — Stop Leaving Revenue on the Table" />
+  <meta property="og:description" content="AI-powered billing code optimization for Texas physicians. No billing staff required. No patient data leaves your device." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://texas.billitmd.com/" />
+  <meta property="og:image" content="https://texas.billitmd.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BillitMD — AI Billing for Texas Physicians" />
+  <meta name="twitter:description" content="Stop losing 15–20% of your revenue to billing errors. Join the waitlist." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:    { DEFAULT: '#0B1F3A', 50: '#E8EDF3', 100: '#C6D2E0', 200: '#8FAABF', 300: '#5882A0', 400: '#2D5F85', 500: '#0B4073', 600: '#0B3461', 700: '#0B2850', 800: '#0B1F3A', 900: '#060F1D' },
+            gold:    { DEFAULT: '#C8922A', 50: '#FBF3E3', 100: '#F5E3BC', 200: '#EBC97A', 300: '#E0AF38', 400: '#C8922A', 500: '#A87520', 600: '#875C17', 700: '#66450F', 800: '#462F08', 900: '#251804' },
+            amber:   { DEFAULT: '#F5A623', light: '#FFD166', dark: '#C47D0A' },
+          },
+          fontFamily: {
+            sans:   ['Inter', 'system-ui', 'sans-serif'],
+            serif:  ['Merriweather', 'Georgia', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ─── Base ─────────────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0B1F3A; color: #fff; -webkit-font-smoothing: antialiased; }
+
+    /* ─── Lone Star SVG pattern (subtle hero bg) ───────────────────────────── */
+    .star-bg {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='60,8 73,43 110,43 81,64 92,99 60,78 28,99 39,64 10,43 47,43' fill='none' stroke='%23C8922A' stroke-width='0.6' opacity='0.12'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 120px 120px;
+    }
+
+    /* ─── Gradient overlays ─────────────────────────────────────────────────── */
+    .hero-gradient {
+      background: linear-gradient(160deg, #060F1D 0%, #0B1F3A 45%, #0B2850 100%);
+    }
+    .gold-line { height: 3px; background: linear-gradient(90deg, #C8922A, #F5A623, #C8922A); }
+
+    /* ─── Section alternates ────────────────────────────────────────────────── */
+    .section-light { background: #F7F8FA; color: #0B1F3A; }
+    .section-dark  { background: #060F1D; color: #fff; }
+    .section-mid   { background: #0B1F3A; color: #fff; }
+
+    /* ─── Cards ──────────────────────────────────────────────────────────────── */
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,146,42,0.18);
+      border-radius: 12px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: rgba(200,146,42,0.5); transform: translateY(-2px); }
+    .card-light {
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(11,31,58,0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card-light:hover { box-shadow: 0 6px 28px rgba(11,31,58,0.12); transform: translateY(-2px); }
+
+    /* ─── CTA button ────────────────────────────────────────────────────────── */
+    .btn-gold {
+      background: linear-gradient(135deg, #C8922A 0%, #F5A623 100%);
+      color: #0B1F3A;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(200,146,42,0.35);
+    }
+    .btn-gold:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(200,146,42,0.5); }
+    .btn-gold:active { transform: translateY(0); }
+
+    .btn-outline {
+      background: transparent;
+      color: #C8922A;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 13px 32px;
+      font-size: 1rem;
+      border: 2px solid #C8922A;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: #C8922A; color: #0B1F3A; }
+
+    /* ─── Nav ────────────────────────────────────────────────────────────────── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(6,15,29,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(200,146,42,0.15); }
+
+    /* ─── Step number ───────────────────────────────────────────────────────── */
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, #C8922A, #F5A623);
+      color: #0B1F3A; font-weight: 900; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ─── Pain point icon box ───────────────────────────────────────────────── */
+    .icon-box {
+      width: 52px; height: 52px; border-radius: 10px;
+      background: rgba(200,146,42,0.12); border: 1px solid rgba(200,146,42,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1.5rem;
+    }
+
+    /* ─── Lone Star decorative ──────────────────────────────────────────────── */
+    .lone-star { display: inline-block; }
+
+    /* ─── Form ──────────────────────────────────────────────────────────────── */
+    .form-input {
+      width: 100%; padding: 14px 18px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px; color: #fff; font-size: 1rem; outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.45); }
+    .form-input:focus { border-color: #C8922A; background: rgba(255,255,255,0.1); }
+
+    .form-input-light {
+      width: 100%; padding: 14px 18px;
+      background: #fff; border: 1.5px solid #CBD5E1;
+      border-radius: 8px; color: #0B1F3A; font-size: 1rem; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input-light:focus { border-color: #C8922A; box-shadow: 0 0 0 3px rgba(200,146,42,0.15); }
+
+    /* ─── Trust badges ──────────────────────────────────────────────────────── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(200,146,42,0.1); border: 1px solid rgba(200,146,42,0.25);
+      border-radius: 20px; padding: 6px 14px; font-size: 0.82rem; font-weight: 600;
+      color: #F5A623; letter-spacing: 0.02em;
+    }
+    .badge-light {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #EEF2FF; border: 1px solid #C7D2FE;
+      border-radius: 20px; padding: 6px 14px; font-size: 0.82rem; font-weight: 600;
+      color: #3730A3;
+    }
+
+    /* ─── Stat callout ──────────────────────────────────────────────────────── */
+    .stat-big { font-size: 3rem; font-weight: 900; line-height: 1; color: #F5A623; }
+    @media (min-width: 640px) { .stat-big { font-size: 3.5rem; } }
+
+    /* ─── Divider line ──────────────────────────────────────────────────────── */
+    .divider { border: none; border-top: 1px solid rgba(200,146,42,0.15); margin: 0; }
+
+    /* ─── Success state ─────────────────────────────────────────────────────── */
+    #success-msg { display: none; }
+
+    /* ─── Smooth section padding ────────────────────────────────────────────── */
+    section { padding: 80px 0; }
+    @media (max-width: 640px) { section { padding: 56px 0; } }
+
+    /* ─── Scrollbar ─────────────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #060F1D; }
+    ::-webkit-scrollbar-thumb { background: #C8922A; border-radius: 3px; }
+
+    /* ─── Utility ───────────────────────────────────────────────────────────── */
+    .text-gold { color: #C8922A; }
+    .text-amber { color: #F5A623; }
+    .max-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    @media (min-width: 640px) { .max-container { padding: 0 32px; } }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="max-container" style="display:flex;align-items:center;justify-content:space-between;height:60px;">
+    <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <!-- Lone Star Logo Mark -->
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="14,2 17.5,10.5 26.5,10.5 19.5,16 22,24.5 14,19.5 6,24.5 8.5,16 1.5,10.5 10.5,10.5" fill="#C8922A"/>
+      </svg>
+      <span style="font-weight:800;font-size:1.15rem;color:#fff;letter-spacing:-0.02em;">Billit<span style="color:#C8922A;">MD</span></span>
+    </a>
+    <a href="#waitlist" class="btn-gold" style="padding:9px 22px;font-size:0.88rem;">Join Waitlist</a>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section class="hero-gradient star-bg" style="padding-top:80px;padding-bottom:96px;position:relative;overflow:hidden;">
+
+  <!-- Gold accent line top -->
+  <div class="gold-line" style="position:absolute;top:0;left:0;right:0;"></div>
+
+  <!-- Background Lone Star watermark -->
+  <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);opacity:0.04;pointer-events:none;">
+    <svg width="520" height="520" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="60,4 72,38 108,38 80,60 90,94 60,72 30,94 40,60 12,38 48,38" fill="#C8922A"/>
+    </svg>
+  </div>
+
+  <div class="max-container" style="position:relative;">
+    <div style="max-width:720px;">
+
+      <!-- Pre-headline badge -->
+      <div style="margin-bottom:24px;">
+        <span class="badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polygon points="6,1 7.5,4.5 11,4.5 8.5,7 9.5,10.5 6,8.5 2.5,10.5 3.5,7 1,4.5 4.5,4.5" fill="#F5A623"/></svg>
+          Now Expanding to Texas
+        </span>
+      </div>
+
+      <!-- H1 -->
+      <h1 style="font-family:'Merriweather',Georgia,serif;font-weight:900;font-size:clamp(2rem,5vw,3.4rem);line-height:1.15;margin-bottom:24px;color:#fff;">
+        Texas Physicians Are Losing<br/>
+        <span style="color:#F5A623;">15–20% of Their Revenue</span><br/>
+        to Billing Errors. Not Anymore.
+      </h1>
+
+      <!-- Subhead -->
+      <p style="font-size:clamp(1rem,2.5vw,1.25rem);color:rgba(255,255,255,0.78);line-height:1.7;margin-bottom:36px;max-width:600px;">
+        BillitMD uses AI to optimize CPT and HCPCS billing codes from your encounter notes — in seconds. Built for independent Texas practices that can't afford to leave money on the table or hire a full billing team.
+      </p>
+
+      <!-- CTA row -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:40px;">
+        <a href="#waitlist" class="btn-gold" style="font-size:1.05rem;padding:16px 36px;">
+          Join the Texas Waitlist →
+        </a>
+        <a href="#how-it-works" style="color:rgba(255,255,255,0.6);font-size:0.95rem;text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s;" onmouseover="this.style.color='#F5A623'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+          See how it works
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3l5 5-5 5M3 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Social proof micro-line -->
+      <div style="display:flex;align-items:center;gap:12px;">
+        <!-- Avatar stack placeholder -->
+        <div style="display:flex;">
+          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2D5F85,#0B4073);border:2px solid #0B1F3A;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">MD</div>
+          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#C8922A,#F5A623);border:2px solid #0B1F3A;margin-left:-10px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#0B1F3A;">DO</div>
+          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2D5F85,#5882A0);border:2px solid #0B1F3A;margin-left:-10px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">MD</div>
+        </div>
+        <span style="color:rgba(255,255,255,0.55);font-size:0.88rem;">
+          Join <strong style="color:#F5A623;">Texas physicians</strong> already on the waitlist
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Gold divider -->
+<div class="gold-line"></div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     TRUST BAR
+══════════════════════════════════════════════════════════ -->
+<div style="background:#060F1D;padding:20px 0;border-bottom:1px solid rgba(200,146,42,0.12);">
+  <div class="max-container" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center;">
+    <span class="badge">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 4.5V7.5C2 9.985 4.02 12.31 6.5 12.5 8.98 12.31 11 9.985 11 7.5V4.5L6.5 1Z" fill="none" stroke="#F5A623" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 6.5l1.5 1.5 2.5-2.5" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      HIPAA Compliant
+    </span>
+    <span class="badge">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2" y="5.5" width="9" height="6" rx="1.5" stroke="#F5A623" stroke-width="1.3"/><path d="M4.5 5.5V4a2 2 0 014 0v1.5" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Patient Data Never Leaves Your Device
+    </span>
+    <span class="badge">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5l1.2 3.7H12l-3.1 2.3 1.2 3.6L6.5 9l-3.6 2.1 1.2-3.6L1 5.2h4.3z" fill="none" stroke="#F5A623" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      Built for Texas Independent Practices
+    </span>
+    <span class="badge">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#F5A623" stroke-width="1.3"/><path d="M6.5 4v2.5l1.5 1.5" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Seconds Per Encounter
+    </span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     THE PROBLEM
+══════════════════════════════════════════════════════════ -->
+<section class="section-light">
+  <div class="max-container">
+
+    <!-- Section label -->
+    <div style="text-align:center;margin-bottom:16px;">
+      <span style="font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C8922A;">The Problem</span>
+    </div>
+
+    <h2 style="font-family:'Merriweather',Georgia,serif;font-weight:900;font-size:clamp(1.6rem,4vw,2.4rem);text-align:center;color:#0B1F3A;margin-bottom:16px;line-height:1.25;">
+      Independent Practice Is Hard Enough.<br/>Billing Shouldn't Make It Harder.
+    </h2>
+    <p style="text-align:center;color:#475569;font-size:1.05rem;max-width:600px;margin:0 auto 56px;line-height:1.7;">
+      You went into medicine to take care of patients. Somewhere along the way, billing became a second job — and it's costing you.
+    </p>
+
+    <!-- Pain points grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+
+      <!-- Pain 1 -->
+      <div class="card-light" style="padding:28px 24px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;">
+          <div class="icon-box" style="background:#FEF2F2;border-color:#FECACA;">
+            <span style="font-size:1.5rem;">💸</span>
+          </div>
+          <div>
+            <div class="stat-big" style="color:#DC2626;font-size:2.4rem;">15–20%</div>
+            <div style="font-size:0.82rem;color:#64748B;font-weight:500;">Revenue Leakage</div>
+          </div>
+        </div>
+        <h3 style="font-weight:700;font-size:1.05rem;color:#0B1F3A;margin-bottom:8px;">You're Getting Underpaid</h3>
+        <p style="color:#475569;font-size:0.92rem;line-height:1.6;">
+          The average independent physician loses 15–20% of collectible revenue each year to undercoding, missed add-on codes, and documentation gaps. That's $30,000–$80,000 per physician per year, left on the table.
+        </p>
+      </div>
+
+      <!-- Pain 2 -->
+      <div class="card-light" style="padding:28px 24px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;">
+          <div class="icon-box" style="background:#FFF7ED;border-color:#FED7AA;">
+            <span style="font-size:1.5rem;">🗂️</span>
+          </div>
+          <div>
+            <div class="stat-big" style="color:#EA580C;font-size:2.4rem;">6+</div>
+            <div style="font-size:0.82rem;color:#64748B;font-weight:500;">Payers. Different Rules. Every One.</div>
+          </div>
+        </div>
+        <h3 style="font-weight:700;font-size:1.05rem;color:#0B1F3A;margin-bottom:8px;">Multi-Payer Chaos</h3>
+        <p style="color:#475569;font-size:0.92rem;line-height:1.6;">
+          Medicare, Medicaid, BCBS, United, Aetna, Cigna — each with different modifiers, documentation rules, and code preferences. Keeping up is a full-time job you weren't hired to do.
+        </p>
+      </div>
+
+      <!-- Pain 3 -->
+      <div class="card-light" style="padding:28px 24px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;">
+          <div class="icon-box" style="background:#F0FDF4;border-color:#BBF7D0;">
+            <span style="font-size:1.5rem;">⏱️</span>
+          </div>
+          <div>
+            <div class="stat-big" style="color:#16A34A;font-size:2.4rem;">2–3 hrs</div>
+            <div style="font-size:0.82rem;color:#64748B;font-weight:500;">Daily. On Admin.</div>
+          </div>
+        </div>
+        <h3 style="font-weight:700;font-size:1.05rem;color:#0B1F3A;margin-bottom:8px;">Admin That Eats Your Day</h3>
+        <p style="color:#475569;font-size:0.92rem;line-height:1.6;">
+          Physicians spend an average of 2–3 hours per day on documentation and billing-related tasks. That's 10–15 hours a week you could spend on patients — or on having a life outside the clinic.
+        </p>
+      </div>
+
+      <!-- Pain 4 -->
+      <div class="card-light" style="padding:28px 24px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;">
+          <div class="icon-box" style="background:#EFF6FF;border-color:#BFDBFE;">
+            <span style="font-size:1.5rem;">🏥</span>
+          </div>
+          <div>
+            <div class="stat-big" style="color:#2563EB;font-size:2.4rem;">1 in 3</div>
+            <div style="font-size:0.82rem;color:#64748B;font-weight:500;">Consider Selling to a Health System</div>
+          </div>
+        </div>
+        <h3 style="font-weight:700;font-size:1.05rem;color:#0B1F3A;margin-bottom:8px;">Independence vs. Sanity</h3>
+        <p style="color:#475569;font-size:0.92rem;line-height:1.6;">
+          The billing burden is one of the top reasons physicians sell their practices. You shouldn't have to choose between running your own practice and running yourself into the ground.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════════════════════════ -->
+<section id="how-it-works" class="section-mid">
+  <div class="max-container">
+
+    <div style="text-align:center;margin-bottom:16px;">
+      <span style="font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C8922A;">How It Works</span>
+    </div>
+    <h2 style="font-family:'Merriweather',Georgia,serif;font-weight:900;font-size:clamp(1.6rem,4vw,2.4rem);text-align:center;color:#fff;margin-bottom:16px;line-height:1.25;">
+      From Encounter Notes to Optimized Codes.<br/>In Under a Minute.
+    </h2>
+    <p style="text-align:center;color:rgba(255,255,255,0.6);font-size:1.05rem;max-width:560px;margin:0 auto 56px;line-height:1.7;">
+      No new workflow to learn. No billing department needed. Just describe the encounter and let BillitMD do the work.
+    </p>
+
+    <!-- Steps -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;position:relative;">
+
+      <!-- Step 1 -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="card" style="padding:32px 28px;height:100%;">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <div class="step-num">1</div>
+            <span style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;">Enter Encounter</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1.15rem;color:#fff;margin-bottom:12px;">
+            Type or Dictate Your Notes
+          </h3>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.93rem;line-height:1.65;">
+            Paste your SOAP note, dictate directly into BillitMD, or forward your EHR output. Write it like you'd write a note to yourself — plain language works fine. No templates required.
+          </p>
+          <!-- Mini UI mockup -->
+          <div style="margin-top:20px;background:rgba(0,0,0,0.3);border-radius:8px;padding:16px;border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:0.78rem;color:#F5A623;font-weight:600;margin-bottom:8px;">ENCOUNTER NOTE</div>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);line-height:1.5;font-style:italic;">"68yo M, established patient. HTN f/u. BP 148/92. Adjusted lisinopril, ordered BMP. 25-min visit. Discussed diet..."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="card" style="padding:32px 28px;height:100%;border-color:rgba(200,146,42,0.35);">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <div class="step-num">2</div>
+            <span style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;">AI Optimizes</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1.15rem;color:#fff;margin-bottom:12px;">
+            AI Recommends the Right Codes
+          </h3>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.93rem;line-height:1.65;">
+            BillitMD analyzes your note against current CPT and HCPCS code sets, flags missed add-on codes, checks E&M level accuracy, and surfaces every dollar your documentation supports — with a plain-English justification for each code.
+          </p>
+          <!-- Mini result mockup -->
+          <div style="margin-top:20px;background:rgba(0,0,0,0.3);border-radius:8px;padding:16px;border:1px solid rgba(200,146,42,0.15);">
+            <div style="font-size:0.78rem;color:#F5A623;font-weight:600;margin-bottom:10px;">RECOMMENDED CODES</div>
+            <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:rgba(255,255,255,0.65);margin-bottom:6px;"><span>99214 — Office visit, moderate</span><span style="color:#4ADE80;font-weight:600;">+$178</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:rgba(255,255,255,0.65);margin-bottom:6px;"><span>93000 — ECG (flagged, eligible)</span><span style="color:#4ADE80;font-weight:600;">+$32</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:#F5A623;font-weight:600;border-top:1px solid rgba(255,255,255,0.08);padding-top:6px;margin-top:2px;"><span>Potential uplift</span><span>+$54 recovered</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="card" style="padding:32px 28px;height:100%;">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <div class="step-num">3</div>
+            <span style="font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;">Submit with Confidence</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1.15rem;color:#fff;margin-bottom:12px;">
+            Validate, Review, and Bill
+          </h3>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.93rem;line-height:1.65;">
+            Before you submit, a validation layer checks for conflicts, bundling errors, and payer-specific rules. You stay in control — BillitMD gives you the information, you make the final call. Works with your existing EHR or billing workflow.
+          </p>
+          <!-- Validation mockup -->
+          <div style="margin-top:20px;background:rgba(0,0,0,0.3);border-radius:8px;padding:16px;border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:0.78rem;color:#F5A623;font-weight:600;margin-bottom:10px;">VALIDATION REPORT</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;color:#4ADE80;margin-bottom:5px;"><span>✓</span><span>No bundling conflicts detected</span></div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;color:#4ADE80;margin-bottom:5px;"><span>✓</span><span>Documentation supports E&M level</span></div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;color:#FCD34D;"><span>⚠</span><span>Medicare modifier -25 recommended</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     WHY BILLITMD
+══════════════════════════════════════════════════════════ -->
+<section class="section-light">
+  <div class="max-container">
+
+    <div style="text-align:center;margin-bottom:16px;">
+      <span style="font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C8922A;">Why BillitMD</span>
+    </div>
+    <h2 style="font-family:'Merriweather',Georgia,serif;font-weight:900;font-size:clamp(1.6rem,4vw,2.4rem);text-align:center;color:#0B1F3A;margin-bottom:56px;line-height:1.25;">
+      Built for Independent Physicians.<br/>Not Hospital Systems.
+    </h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;">
+
+      <!-- Differentiator 1 -->
+      <div class="card-light" style="padding:28px 24px;display:flex;gap:18px;align-items:flex-start;">
+        <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#0B2850,#0B4073);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><polygon points="11,2 13.5,8.5 20.5,8.5 15,13 17,19.5 11,15.5 5,19.5 7,13 1.5,8.5 8.5,8.5" fill="#C8922A"/></svg>
+        </div>
+        <div>
+          <h3 style="font-weight:700;font-size:1rem;color:#0B1F3A;margin-bottom:8px;">Built for Texas Independent Practices</h3>
+          <p style="color:#475569;font-size:0.9rem;line-height:1.6;">Designed for the solo doc and small-group practice — not for 50-physician health systems with dedicated billing departments. Every feature is sized right for how you actually work.</p>
+        </div>
+      </div>
+
+      <!-- Differentiator 2 -->
+      <div class="card-light" style="padding:28px 24px;display:flex;gap:18px;align-items:flex-start;">
+        <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#0B2850,#0B4073);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="9" width="14" height="10" rx="2.5" stroke="#C8922A" stroke-width="1.8"/><path d="M8 9V7a3 3 0 016 0v2" stroke="#C8922A" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="14" r="1.5" fill="#C8922A"/></svg>
+        </div>
+        <div>
+          <h3 style="font-weight:700;font-size:1rem;color:#0B1F3A;margin-bottom:8px;">Zero Patient Data Leaves Your Device</h3>
+          <p style="color:#475569;font-size:0.9rem;line-height:1.6;">All encounter processing happens on your device. Patient data is never uploaded to our servers. Not stored, not transmitted, not at risk. HIPAA compliance is a design decision, not an afterthought.</p>
+        </div>
+      </div>
+
+      <!-- Differentiator 3 -->
+      <div class="card-light" style="padding:28px 24px;display:flex;gap:18px;align-items:flex-start;">
+        <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#0B2850,#0B4073);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M4 7h8M4 15h6" stroke="#C8922A" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3 style="font-weight:700;font-size:1rem;color:#0B1F3A;margin-bottom:8px;">Works With Your Existing EHR</h3>
+          <p style="color:#475569;font-size:0.9rem;line-height:1.6;">No rip-and-replace. No expensive integrations. BillitMD fits into your current workflow — paste your note, get your codes. Works alongside Epic, Athenahealth, eClinicalWorks, or a plain Word doc.</p>
+        </div>
+      </div>
+
+      <!-- Differentiator 4 -->
+      <div class="card-light" style="padding:28px 24px;display:flex;gap:18px;align-items:flex-start;">
+        <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#0B2850,#0B4073);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#C8922A" stroke-width="1.8"/><path d="M8 11l2 2 4-4" stroke="#C8922A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3 style="font-weight:700;font-size:1rem;color:#0B1F3A;margin-bottom:8px;">Justifications You Can Stand Behind</h3>
+          <p style="color:#475569;font-size:0.9rem;line-height:1.6;">Every code recommendation comes with a plain-English explanation of why it's supported by your documentation. You're never guessing. If there's an audit, you know exactly why each code was billed.</p>
+        </div>
+      </div>
+
+      <!-- Differentiator 5 -->
+      <div class="card-light" style="padding:28px 24px;display:flex;gap:18px;align-items:flex-start;">
+        <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#0B2850,#0B4073);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 4v7l4 4" stroke="#C8922A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="8" stroke="#C8922A" stroke-width="1.8"/></svg>
+        </div>
+        <div>
+          <h3 style="font-weight:700;font-size:1rem;color:#0B1F3A;margin-bottom:8px;">Results in Under a Minute</h3>
+          <p style="color:#475569;font-size:0.9rem;line-height:1.6;">Not a 3-day billing cycle. Not a 24-hour turnaround. Paste your note and have optimized, validated codes ready before you walk to your next exam room. Speed that actually fits your day.</p>
+        </div>
+      </div>
+
+      <!-- Differentiator 6 -->
+      <div class="card-light" style="padding:28px 24px;display:flex;gap:18px;align-items:flex-start;">
+        <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#0B2850,#0B4073);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11c2-4 10-4 12 0M5 11c2 4 10 4 12 0" stroke="#C8922A" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="11" r="2" fill="#C8922A"/></svg>
+        </div>
+        <div>
+          <h3 style="font-weight:700;font-size:1rem;color:#0B1F3A;margin-bottom:8px;">Stays Current With CMS Updates</h3>
+          <p style="color:#475569;font-size:0.9rem;line-height:1.6;">CPT codes and payer rules change every year. BillitMD is updated automatically — you don't have to track CMS releases or purchase annual codebook updates. That's handled.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SOCIAL PROOF / TRUST
+══════════════════════════════════════════════════════════ -->
+<section class="section-dark">
+  <div class="max-container">
+
+    <!-- Texas pride statement -->
+    <div style="text-align:center;margin-bottom:56px;">
+      <div style="display:inline-block;margin-bottom:20px;">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="28,5 33.5,20.5 50,20.5 37,30 42,46 28,36.5 14,46 19,30 6,20.5 22.5,20.5" fill="#C8922A" opacity="0.9"/>
+        </svg>
+      </div>
+      <h2 style="font-family:'Merriweather',Georgia,serif;font-weight:900;font-size:clamp(1.5rem,4vw,2.2rem);color:#fff;margin-bottom:16px;line-height:1.25;">
+        "Built by Physicians, for Physicians."
+      </h2>
+      <p style="color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto;font-size:1.05rem;line-height:1.7;">
+        We're physicians and engineers who got tired of watching good doctors lose money — and their independence — because billing is complicated. BillitMD is what we wished existed.
+      </p>
+    </div>
+
+    <!-- Trust signals grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:56px;">
+
+      <div style="text-align:center;padding:28px 20px;border:1px solid rgba(200,146,42,0.15);border-radius:12px;">
+        <div style="font-size:2.6rem;font-weight:900;color:#F5A623;margin-bottom:6px;">CPT / HCPCS</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Full US code set coverage</div>
+      </div>
+
+      <div style="text-align:center;padding:28px 20px;border:1px solid rgba(200,146,42,0.15);border-radius:12px;">
+        <div style="font-size:1.6rem;margin-bottom:8px;">🛡️</div>
+        <div style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:4px;">HIPAA Compliant</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Privacy by design</div>
+      </div>
+
+      <div style="text-align:center;padding:28px 20px;border:1px solid rgba(200,146,42,0.15);border-radius:12px;">
+        <div style="font-size:1.6rem;margin-bottom:8px;">🩺</div>
+        <div style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:4px;">Physician-Led</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Built by MDs who bill daily</div>
+      </div>
+
+      <div style="text-align:center;padding:28px 20px;border:1px solid rgba(200,146,42,0.15);border-radius:12px;">
+        <div style="font-size:1.6rem;margin-bottom:8px;">🔒</div>
+        <div style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:4px;">No Cloud PHI</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Data stays on your device</div>
+      </div>
+
+    </div>
+
+    <!-- Quote / testimonial placeholder -->
+    <div style="background:rgba(200,146,42,0.06);border:1px solid rgba(200,146,42,0.2);border-radius:16px;padding:36px 32px;max-width:720px;margin:0 auto;position:relative;">
+      <div style="font-size:3rem;color:#C8922A;opacity:0.4;position:absolute;top:16px;left:24px;line-height:1;">"</div>
+      <p style="font-size:1.1rem;color:rgba(255,255,255,0.85);line-height:1.7;font-style:italic;margin-bottom:20px;padding-top:16px;">
+        I'm a solo family medicine doc in Frisco. I estimated I was leaving $40,000 a year uncollected. I didn't know what I didn't know about add-on codes and E&M levels. A tool like this is exactly what independent physicians need to survive without joining a hospital system.
+      </p>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2D5F85,#0B4073);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;">MD</div>
+        <div>
+          <div style="font-weight:700;color:#fff;font-size:0.92rem;">Beta Participant</div>
+          <div style="color:rgba(255,255,255,0.45);font-size:0.82rem;">Family Medicine · Frisco, TX</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     FINAL CTA / WAITLIST
+══════════════════════════════════════════════════════════ -->
+<section id="waitlist" class="hero-gradient star-bg">
+  <div class="max-container" style="max-width:680px;">
+
+    <div style="text-align:center;margin-bottom:16px;">
+      <span class="badge">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polygon points="6,1 7.5,4.5 11,4.5 8.5,7 9.5,10.5 6,8.5 2.5,10.5 3.5,7 1,4.5 4.5,4.5" fill="#F5A623"/></svg>
+        Texas Waitlist — Limited Early Access
+      </span>
+    </div>
+
+    <h2 style="font-family:'Merriweather',Georgia,serif;font-weight:900;font-size:clamp(1.7rem,4vw,2.6rem);text-align:center;color:#fff;margin-bottom:20px;line-height:1.2;">
+      Stop Leaving Revenue Behind.<br/>
+      <span style="color:#F5A623;">Join the Waitlist Today.</span>
+    </h2>
+
+    <p style="text-align:center;color:rgba(255,255,255,0.65);font-size:1.05rem;margin-bottom:40px;line-height:1.7;">
+      BillitMD is launching in Texas. Early access members get priority onboarding, founding-member pricing, and direct input into features built around how Texas physicians practice.
+    </p>
+
+    <!-- Waitlist Form -->
+    <!-- SETUP: Replace YOUR_FORM_ID with your Formspree form ID at formspree.io -->
+    <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="background:rgba(255,255,255,0.05);border:1px solid rgba(200,146,42,0.2);border-radius:16px;padding:36px 32px;">
+
+      <!-- Hidden UTM fields -->
+      <input type="hidden" name="utm_source" id="utm_source" />
+      <input type="hidden" name="utm_medium" id="utm_medium" />
+      <input type="hidden" name="utm_campaign" id="utm_campaign" />
+      <input type="hidden" name="utm_content" id="utm_content" />
+      <input type="hidden" name="utm_term" id="utm_term" />
+      <input type="hidden" name="_subject" value="New BillitMD Texas Waitlist Signup" />
+      <input type="hidden" name="_next" value="" /> <!-- JS fills this -->
+
+      <div style="display:flex;flex-direction:column;gap:14px;">
+
+        <div>
+          <label style="display:block;font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.7);margin-bottom:6px;" for="email">Your Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            placeholder="you@yourpractice.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div>
+          <label style="display:block;font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.7);margin-bottom:6px;" for="specialty">Specialty <span style="font-weight:400;opacity:0.6;">(optional)</span></label>
+          <select id="specialty" name="specialty" class="form-input" style="appearance:none;cursor:pointer;">
+            <option value="" style="background:#0B1F3A;">Select your specialty…</option>
+            <option value="family_medicine" style="background:#0B1F3A;">Family Medicine</option>
+            <option value="internal_medicine" style="background:#0B1F3A;">Internal Medicine</option>
+            <option value="general_practice" style="background:#0B1F3A;">General Practice</option>
+            <option value="pediatrics" style="background:#0B1F3A;">Pediatrics</option>
+            <option value="ob_gyn" style="background:#0B1F3A;">OB/GYN</option>
+            <option value="urgent_care" style="background:#0B1F3A;">Urgent Care</option>
+            <option value="other" style="background:#0B1F3A;">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-gold" style="width:100%;text-align:center;font-size:1.05rem;padding:16px;margin-top:4px;">
+          Reserve My Spot — Join the Waitlist →
+        </button>
+
+      </div>
+
+      <p style="text-align:center;color:rgba(255,255,255,0.38);font-size:0.78rem;margin-top:16px;line-height:1.5;">
+        No spam. No sales calls. Just a notification when BillitMD is ready for Texas practices. Unsubscribe anytime.
+      </p>
+    </form>
+
+    <!-- Success message (shown after submit) -->
+    <div id="success-msg" style="background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.3);border-radius:16px;padding:40px 32px;text-align:center;">
+      <div style="font-size:2.5rem;margin-bottom:16px;">🤠</div>
+      <h3 style="font-weight:800;font-size:1.4rem;color:#fff;margin-bottom:12px;">You're on the list.</h3>
+      <p style="color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.6;max-width:400px;margin:0 auto;">
+        Welcome to the BillitMD Texas waitlist. We'll reach out when early access opens — and you'll be first in line. In the meantime, keep billing hard.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<div class="gold-line"></div>
+<footer style="background:#060F1D;padding:48px 0 32px;">
+  <div class="max-container">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-bottom:40px;">
+
+      <!-- Brand -->
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><polygon points="14,2 17.5,10.5 26.5,10.5 19.5,16 22,24.5 14,19.5 6,24.5 8.5,16 1.5,10.5 10.5,10.5" fill="#C8922A"/></svg>
+          <span style="font-weight:800;font-size:1.1rem;color:#fff;">Billit<span style="color:#C8922A;">MD</span></span>
+        </div>
+        <p style="color:rgba(255,255,255,0.4);font-size:0.88rem;line-height:1.6;max-width:220px;">
+          AI-powered billing code optimization for independent physicians. Built in Texas.
+        </p>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;">Product</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="#how-it-works" style="color:rgba(255,255,255,0.55);font-size:0.9rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F5A623'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">How It Works</a></li>
+          <li><a href="#waitlist" style="color:rgba(255,255,255,0.55);font-size:0.9rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F5A623'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Join Waitlist</a></li>
+          <li><a href="mailto:texas@billitmd.com" style="color:rgba(255,255,255,0.55);font-size:0.9rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F5A623'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;">Legal</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="/privacy" style="color:rgba(255,255,255,0.55);font-size:0.9rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F5A623'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Privacy Policy</a></li>
+          <li><a href="/terms" style="color:rgba(255,255,255,0.55);font-size:0.9rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F5A623'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Terms of Service</a></li>
+          <li><a href="/hipaa" style="color:rgba(255,255,255,0.55);font-size:0.9rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F5A623'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">HIPAA Notice</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;">Contact</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <li>
+            <a href="mailto:texas@billitmd.com" style="color:rgba(255,255,255,0.55);font-size:0.9rem;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:6px;" onmouseover="this.style.color='#F5A623'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1 4l6 4 6-4" stroke="currentColor" stroke-width="1.3"/></svg>
+              texas@billitmd.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="divider" />
+
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding-top:24px;">
+      <p style="color:rgba(255,255,255,0.3);font-size:0.8rem;">
+        © 2026 BillitMD. All rights reserved. Made in Texas. 🤠
+      </p>
+      <p style="color:rgba(255,255,255,0.2);font-size:0.75rem;max-width:420px;text-align:right;line-height:1.5;">
+        BillitMD provides billing code recommendations as decision support only. Physicians remain responsible for accurate code selection and compliance with payer policies.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════════ -->
+<script>
+(function() {
+
+  // ── UTM Parameter capture ──────────────────────────────────
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name) || '';
+  }
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(param) {
+    var el = document.getElementById(param);
+    if (el) el.value = getParam(param);
+  });
+
+  // Persist UTMs to localStorage so they survive page reloads
+  var utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  utms.forEach(function(p) {
+    var val = getParam(p);
+    if (val) localStorage.setItem(p, val);
+    else {
+      var stored = localStorage.getItem(p);
+      var el = document.getElementById(p);
+      if (stored && el) el.value = stored;
+    }
+  });
+
+  // ── Waitlist Form Submission (Formspree AJAX) ──────────────
+  var form = document.getElementById('waitlist-form');
+  var successMsg = document.getElementById('success-msg');
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+
+      var data = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(resp) {
+        if (resp.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+          // Scroll to success
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Reserve My Spot — Join the Waitlist →';
+          alert('Something went wrong. Please email us directly at texas@billitmd.com');
+        }
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Reserve My Spot — Join the Waitlist →';
+        alert('Network error. Please email us directly at texas@billitmd.com');
+      });
+    });
+  }
+
+  // ── Smooth scroll for anchor links ────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ── Intersection Observer: fade-in on scroll ───────────────
+  if ('IntersectionObserver' in window) {
+    var style = document.createElement('style');
+    style.textContent = '.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; } .fade-in.visible { opacity: 1; transform: translateY(0); }';
+    document.head.appendChild(style);
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Apply to cards
+    document.querySelectorAll('.card, .card-light').forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  }
+
+})();
+</script>
+
+</body>
+</html>
